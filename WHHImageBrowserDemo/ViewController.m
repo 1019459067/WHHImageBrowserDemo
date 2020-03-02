@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"图片(支持GIF)、视频播放控件";
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.collectionView];
 }
