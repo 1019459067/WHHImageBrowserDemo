@@ -7,7 +7,6 @@
 //
 
 #import "YBIBTopView.h"
-#import "YBIBUtilities.h"
 
 @interface YBIBTopView ()
 @property (nonatomic, strong) UILabel *pageLabel;
@@ -27,9 +26,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.pageLabel.hidden = [YBIBUtilities sharedInstance].bFullScreen ? YES:NO;
     CGFloat height = 20, width = 60;
-//    UIEdgeInsets padding = YBIBPaddingByBrowserOrientation(orientation);
     self.pageLabel.frame = CGRectMake((self.bounds.size.width-width)/2., (self.bounds.size.height-height)/2.,
                                       width , height);
 }
@@ -37,7 +34,7 @@
 #pragma mark - public
 
 + (CGFloat)defaultHeight {
-    return 50;
+    return 30;
 }
 
 - (void)setPage:(NSInteger)page totalPage:(NSInteger)totalPage {

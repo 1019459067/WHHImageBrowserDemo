@@ -9,6 +9,7 @@
 #import "YBIBToolViewHandler.h"
 #import "YBIBCopywriter.h"
 #import "YBIBUtilities.h"
+#import "YBIBVideoActionBar.h"
 
 @interface YBIBToolViewHandler ()
 @property (nonatomic, strong) YBIBTopView *topView;
@@ -57,8 +58,10 @@
 - (void)layoutWithExpectOrientation:(UIDeviceOrientation)orientation {
     CGSize containerSize = self.yb_containerSize(orientation);
     UIEdgeInsets padding = YBIBPaddingByBrowserOrientation(orientation);
-    
-    self.topView.frame = CGRectMake(padding.left, containerSize.height-[YBIBTopView defaultHeight]-40, containerSize.width - padding.left - padding.right, [YBIBTopView defaultHeight]);
+   
+    self.topView.hidden = [YBIBUtilities sharedInstance].bFullScreen ? YES:NO;
+    self.topView.frame = CGRectMake(padding.left, containerSize.height-[YBIBTopView defaultHeight]-padding.bottom-[YBIBVideoActionBar defaultHeight],
+                                    containerSize.width - padding.left - padding.right, [YBIBTopView defaultHeight]);
 }
 
 #pragma mark - getters

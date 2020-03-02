@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C9CA6EB623FFA4EF00C1F4F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CA6EB523FFA4EF00C1F4F0 /* AppDelegate.m */; };
-		C9CA6EB923FFA4EF00C1F4F0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CA6EB823FFA4EF00C1F4F0 /* SceneDelegate.m */; };
 		C9CA6EBC23FFA4EF00C1F4F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CA6EBB23FFA4EF00C1F4F0 /* ViewController.m */; };
 		C9CA6EBF23FFA4EF00C1F4F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CA6EBD23FFA4EF00C1F4F0 /* Main.storyboard */; };
 		C9CA6EC123FFA4F500C1F4F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CA6EC023FFA4F500C1F4F0 /* Assets.xcassets */; };
@@ -120,8 +119,6 @@
 		C9CA6EB123FFA4EF00C1F4F0 /* WHHImageBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHHImageBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CA6EB423FFA4EF00C1F4F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9CA6EB523FFA4EF00C1F4F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9CA6EB723FFA4EF00C1F4F0 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		C9CA6EB823FFA4EF00C1F4F0 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		C9CA6EBA23FFA4EF00C1F4F0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C9CA6EBB23FFA4EF00C1F4F0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C9CA6EBE23FFA4EF00C1F4F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -377,8 +374,6 @@
 				C9CA6F9923FFA64000C1F4F0 /* BaseListCell */,
 				C9CA6EB423FFA4EF00C1F4F0 /* AppDelegate.h */,
 				C9CA6EB523FFA4EF00C1F4F0 /* AppDelegate.m */,
-				C9CA6EB723FFA4EF00C1F4F0 /* SceneDelegate.h */,
-				C9CA6EB823FFA4EF00C1F4F0 /* SceneDelegate.m */,
 				C9CA6EBA23FFA4EF00C1F4F0 /* ViewController.h */,
 				C9CA6EBB23FFA4EF00C1F4F0 /* ViewController.m */,
 				C9CA6EBD23FFA4EF00C1F4F0 /* Main.storyboard */,
@@ -864,7 +859,6 @@
 				C9CA703E23FFA83E00C1F4F0 /* SDAnimatedImageRep.m in Sources */,
 				C9CA705A23FFA83E00C1F4F0 /* SDAsyncBlockOperation.m in Sources */,
 				C9CA70E023FFAEA600C1F4F0 /* YBIBAuxiliaryViewHandler.m in Sources */,
-				C9CA6EB923FFA4EF00C1F4F0 /* SceneDelegate.m in Sources */,
 				C9CA705123FFA83E00C1F4F0 /* UIView+WebCacheOperation.m in Sources */,
 				C9CA702C23FFA83E00C1F4F0 /* UIImage+ForceDecode.m in Sources */,
 				C9CA708023FFAE4600C1F4F0 /* YBIBVideoCell.m in Sources */,
