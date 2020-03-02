@@ -49,6 +49,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)yb_imageBrowser:(YBImageBrowser *)imageBrowser endTransitioningWithIsShow:(BOOL)isShow;
 
+
+/// 将要隐藏
+/// @param imageBrowser 图片浏览器
+/// @param info 隐藏后携带的信息，包含视频播放状态、图片状态
+- (void)yb_imageBrowser:(YBImageBrowser *)imageBrowser willDisappearWithInfo:(NSMutableDictionary *)info;
+
 @end
 
 NS_ASSUME_NONNULL_END

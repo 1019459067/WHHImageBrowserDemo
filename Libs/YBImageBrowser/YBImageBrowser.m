@@ -49,6 +49,8 @@
         [self addGestureRecognizer:longPress];
         [self initValue];
         
+        self.delegate = delegate;
+        
         self.dataSourceArray = dataArray;
         self.currentPage = index;
     }
@@ -258,8 +260,9 @@
     dictInfo[@"currentIndex"] = @(self.currentPage);
     dictInfo[@"time"] = @(videoPlayTime);//当前播放时间（毫秒）
     dictInfo[@"playing"] = @(isPlaying);
-
-//    NSLog(@"== %@",dictInfo);
+    if ([self.delegate respondsToSelector:@selector(yb_imageBrowser:willDisappearWithInfo:)]) {
+        [self.delegate yb_imageBrowser:self willDisappearWithInfo:dictInfo];
+    }
 }
 
 - (void)reloadData {

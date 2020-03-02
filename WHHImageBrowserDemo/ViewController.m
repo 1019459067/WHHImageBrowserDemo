@@ -12,7 +12,7 @@
 #import "YBImageBrowser.h"
 #import "YBIBVideoData.h"
 
-@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, YBImageBrowserDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, copy) NSArray *dataArray;
@@ -104,7 +104,7 @@
             // 网络视频
             YBIBVideoData *data = [YBIBVideoData new];
             data.videoURL = [NSURL URLWithString:obj];
-//            data.projectiveView = [self viewAtIndex:idx];
+            data.projectiveView = [self viewAtIndex:idx];
             [datas addObject:data];
          
         } else if ([obj hasSuffix:@".mp4"]) {
@@ -141,9 +141,13 @@
 //    [browser show];
     
     YBImageBrowser *browser = [[YBImageBrowser alloc]initWithDataSoure:datas index:index delegate:self];
-//      browser.dataSourceArray = datas;
-//      browser.currentPage = index;
-      [browser show];
+    [browser show];
+}
+
+#pragma mark - YBImageBrowserDelegate
+- (void)yb_imageBrowser:(YBImageBrowser *)imageBrowser willDisappearWithInfo:(NSMutableDictionary *)info
+{
+    NSLog(@"dictInfo: %@",info);
 }
 
 @end
