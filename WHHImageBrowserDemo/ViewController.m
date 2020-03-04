@@ -104,7 +104,8 @@
             // 网络视频
             YBIBVideoData *data = [YBIBVideoData new];
             data.videoURL = [NSURL URLWithString:obj];
-            data.projectiveView = [self viewAtIndex:idx];
+//            data.projectiveView = [self viewAtIndex:idx];
+            data.thumbImageUrl = @"https://image.cnhnb.com/image/jpeg/head/2019/11/12/30b9d713ce3c4eeca60ef45eb28e83f5.jpeg";
             [datas addObject:data];
          
         } else if ([obj hasSuffix:@".mp4"]) {

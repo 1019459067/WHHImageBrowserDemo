@@ -81,10 +81,18 @@ extern CGImageRef YYCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeFor
     if (self.thumbImage) {
         [self.delegate yb_videoData:self readyForThumbImage:self.thumbImage];
     } else if (self.projectiveView && [self.projectiveView isKindOfClass:UIImageView.self] && ((UIImageView *)self.projectiveView).image) {
-        self.thumbImage = ((UIImageView *)self.projectiveView).image;
+        UIImage *image = ((UIImageView *)self.projectiveView).image;
+        self.thumbImage = image;
         [self.delegate yb_videoData:self readyForThumbImage:self.thumbImage];
     } else {
-        [self loadThumbImage_firstFrame];
+        if (self.thumbImageUrl.length) {
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.thumbImageUrl]];
+            UIImage *image = [UIImage imageWithData:imageData];
+            self.thumbImage = image;
+            [self.delegate yb_videoData:self readyForThumbImage:self.thumbImage];
+        } else {
+            [self loadThumbImage_firstFrame];
+        }
     }
 }
 - (void)loadThumbImage_firstFrame {
