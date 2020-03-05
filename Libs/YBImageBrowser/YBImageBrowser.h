@@ -15,6 +15,9 @@
 #import "YBIBToolViewHandler.h"
 #import "YBIBWebImageMediator.h"
 #import "YBIBImageData.h"
+#import "YBIBVideoData.h"
+
+#import "YBIBUtilities.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

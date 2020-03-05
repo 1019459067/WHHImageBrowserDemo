@@ -7,10 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "BaseListCell.h"
-#import "YBIBUtilities.h"
 #import "YBImageBrowser.h"
-#import "YBIBVideoData.h"
+
+#import "BaseListCell.h"
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, YBImageBrowserDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
