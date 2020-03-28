@@ -221,6 +221,9 @@
     __kindof UIView *startView;
     __kindof UIView *endView;
     UICollectionViewCell<YBIBCellProtocol> *cell = (UICollectionViewCell<YBIBCellProtocol> *)self.collectionView.centerCell;
+    
+    [self addPostNotifyWithCell:cell];
+
     if ([cell respondsToSelector:@selector(yb_foregroundView)]) {
         startView = cell.yb_foregroundView;
     }
@@ -239,9 +242,6 @@
         [self removeFromSuperview];
         [self setTransitioning:NO isShow:NO];
     }];
-    
-    //
-    [self addPostNotifyWithCell:cell];
 }
 
 - (void)addPostNotifyWithCell:(UICollectionViewCell *)cell
@@ -260,6 +260,7 @@
     dictInfo[@"currentIndex"] = @(self.currentPage);
     dictInfo[@"time"] = @(videoPlayTime);//当前播放时间（毫秒）
     dictInfo[@"playing"] = @(isPlaying);
+
     if ([self.delegate respondsToSelector:@selector(yb_imageBrowser:willDisappearWithInfo:)]) {
         [self.delegate yb_imageBrowser:self willDisappearWithInfo:dictInfo];
     }

@@ -98,14 +98,11 @@
 
 - (void)videoJumpWithScale:(float)scale {
     CMTime startTime = CMTimeMakeWithSeconds(scale, _player.currentTime.timescale);
-    AVPlayer *tmpPlayer = _player;
     
     if (CMTIME_IS_INDEFINITE(startTime) || CMTIME_IS_INVALID(startTime)) return;
-    [_player seekToTime:startTime toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
-        if (finished && tmpPlayer == self->_player) {
-            [self startPlay];
-        }
-    }];
+    
+    [self.player seekToTime:startTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+    [self startPlay];
 }
 
 - (void)preparPlay {

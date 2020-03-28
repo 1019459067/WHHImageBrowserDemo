@@ -596,8 +596,11 @@ static dispatch_queue_t YBIBImageProcessingQueue(void) {
 
 - (void)yb_saveToPhotoAlbum {
     void(^saveData)(NSData *) = ^(NSData * _Nonnull data){
-        [[ALAssetsLibrary new] writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
-            [self saveToPhotoAlbumCompleteWithError:error];
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            UIImage *image = [UIImage imageWithData:data];
+            [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        } completionHandler:^(BOOL success, NSError *error) {
+           [self saveToPhotoAlbumCompleteWithError:error];
         }];
     };
     void(^saveImage)(UIImage *) = ^(UIImage * _Nonnull image){

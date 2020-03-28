@@ -118,9 +118,9 @@
     ((YBIBVideoData *)self.yb_cellData).delegate = nil;
     self.videoView.thumbImageView.hidden = NO;
     self.videoView.autoPlayCount = 0;
-    [self.videoView reset];
     [self.videoView hideToolBar:YES];
     self.yb_hideBrowser();
+    [self.videoView reset];
     _interacting = NO;
 }
 
